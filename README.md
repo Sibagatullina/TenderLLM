@@ -24,7 +24,7 @@
 
 ### Вспомогательные технологии
 - PyMilvus: Python SDK для работы с Milvus
-- OpenAI-совместимый API: Для взаимодействия с Yandex LLM
+- Открытая языковая модель: yandex/YandexGPT-5-Lite-8B-instruct
 - Streamlit-chat: Для отображения истории сообщений
 
 ## ⚙️ Установка и настройка
