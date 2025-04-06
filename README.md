@@ -1,7 +1,48 @@
-# TenderHack
+# TenderLLM
 
-## Команда Ikanam
+# RAG Chatbot для портала госзакупок
 
+## 📌 О проекте
+
+Чат-бот с архитектурой RAG (Retrieval-Augmented Generation) для автоматизации ответов на вопросы о государственных закупках. Решение предназначено для поставщиков и закупщиков, работающих с порталами госзакупок.
+
+## 🌟 Ключевые особенности
+
+- Гибридный поиск: Комбинация семантического и ключевого поиска
+- Контекстные ответы: Генерация ответов на основе актуальных документов
+- Прозрачность: Отображение источников информации
+- Адаптивность: Поддержка различных баз знаний и коллекций документов
+
+## 🛠 Технологический стек
+
+### Основные компоненты
+- Язык программирования: Python 3.10+
+- Векторная БД: Milvus (для хранения и поиска чанков)
+- Языковая модель: YandexGPT-5-Lite-8B-instruct
+- Фронтенд: Streamlit (веб-интерфейс)
+- Алгоритм поиска: BM25 (Best Matching 25)
+
+### Вспомогательные технологии
+- PyMilvus: Python SDK для работы с Milvus
+- OpenAI-совместимый API: Для взаимодействия с Yandex LLM
+- Streamlit-chat: Для отображения истории сообщений
+
+## ⚙️ Установка и настройка
+
+### Предварительные требования
+- Python 3.10 или новее
+- Docker (для локального запуска Milvus)
+- Учетные записи:
+  - Доступ к API Yandex GPT
+  - (Опционально) Облачный инстанс Milvus
+
+### Установка
+
+1. Клонируйте репозиторий:
+```bash
+git clone [https://github.com/yourusername/supplier-portal-chatbot.git](https://github.com/Sibagatullina/TenderLLM.git)
+cd llm_bot
+```
 
 
 ## Project Organization
@@ -11,14 +52,10 @@
 ├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
 ├── README.md          <- The top-level README for developers using this project.
 ├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
+│   
+│ 
 │
 ├── docs               <- A default mkdocs project; see www.mkdocs.org for details
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
 │
 ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
 │                         the creator's initials, and a short `-` delimited description, e.g.
@@ -27,10 +64,6 @@
 ├── pyproject.toml     <- Project configuration file with package metadata for 
 │                         llm_bot and configuration for tools like black
 │
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
 │
 ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
 │                         generated with `pip freeze > requirements.txt`
@@ -43,16 +76,10 @@
     │
     ├── config.py               <- Store useful variables and configuration
     │
-    ├── dataset.py              <- Scripts to download or generate data
     │
-    ├── features.py             <- Code to create features for modeling
+    ├── app.py             <- main file
     │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
+    └── search.py             <- search functions
 ```
 
 --------
